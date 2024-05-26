@@ -11,7 +11,6 @@ resource "aws_vpc" "main" {
             Name = local.resource_name 
         }
   )
-    
 }
 
 ### IGW ###
@@ -156,7 +155,7 @@ resource "aws_route_table" "database" {
 }
 
 ### public route ###
-resource "aws_route" "public_route_gw" {
+resource "aws_route" "public_route" {
   route_table_id            = aws_route_table.public.id
   destination_cidr_block    = "0.0.0.0/0"
   gateway_id = aws_internet_gateway.gw.id
