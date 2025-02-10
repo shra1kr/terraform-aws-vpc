@@ -18,7 +18,7 @@ resource "aws_route" "public_peering" {
   count = var.is_peering_required && var.acceptor_vpc_id == "" ? 1 : 0 # && is condition
   route_table_id            = aws_route_table.public.id
   destination_cidr_block    = data.aws_vpc.default.cidr_block
-  vpc_peering_connection_id = aws_vpc_peering_connection.peering[0].id  # doubt
+  vpc_peering_connection_id = aws_vpc_peering_connection.peering[0].id  
 }
 
 ### private route ###
